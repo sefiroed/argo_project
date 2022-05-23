@@ -4,24 +4,6 @@ metadata:
   name: ingress
   annotations:
     kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/actions.root-service: |
-      {
-          "Type":"forward",
-          "ForwardConfig":{
-            "TargetGroups":[
-              {
-                  "Weight":10,
-                  "ServiceName":"canary-service",
-                  "ServicePort":"80"
-              },
-              {
-                  "Weight":90,
-                  "ServiceName":"stable-service",
-                  "ServicePort":"80"
-              }
-            ]
-          }
-        }
 spec:
   rules:
   - http:
