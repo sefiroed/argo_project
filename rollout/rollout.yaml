@@ -6,13 +6,13 @@ spec:
   replicas: 1
   strategy:
     canary:
-      canaryService: rollouts-demo-canary
-      stableService: rollouts-demo-stable
+      canaryService: canary-service
+      stableService: stable-service
       trafficRouting:
         alb:
-          ingress: rollouts-demo-ingress
-          servicePort: 80
-          rootService: rollouts-demo-root
+          ingress: ingress
+          servicePort: 443
+          rootService: root-service
       steps:
       - setWeight: 5
       - pause: {}
