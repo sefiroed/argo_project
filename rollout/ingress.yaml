@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: rollouts-demo-ingress
+  name: ingress
   annotations:
     kubernetes.io/ingress.class: alb
 spec:
@@ -10,5 +10,5 @@ spec:
       paths:
       - path: /*
         backend:
-          serviceName: rollouts-demo-root
+          serviceName: root-service
           servicePort: use-annotation
